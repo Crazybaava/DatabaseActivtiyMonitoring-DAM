@@ -39,8 +39,9 @@ def send_report_via_ses(sender, recipients, subject, attachment_filepath, region
             Destinations=recipients, # SES requires a list for destinations
             RawMessage={'Data': msg.as_string()} # Pass the entire MIME structure as a string
         )
-        print(f"✅ Email sent successfully with attachment! Message ID: {response['MessageId']}")
+        print(f"Email sent successfully with attachment! Message ID: {response['MessageId']}")
 
     except Exception as e:
         print(f"Error sending email via SES: {e}")
         print("Please ensure your SENDER_EMAIL is verified and your IAM user has the 'ses:SendRawEmail' permission.")
+
