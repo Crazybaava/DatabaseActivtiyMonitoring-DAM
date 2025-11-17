@@ -1,0 +1,13 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.13
+    commands:
+      - pip install pandas
+  build:
+    commands:
+      - ls
+      - pwd
+      - python DAMREPORTLAMBDA.py
